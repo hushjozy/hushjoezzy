@@ -26,6 +26,8 @@ Install:
   - docker tag udagram-frontend:latest hushjoezzy/udagram-frontend:local
   - docker tag reverseproxy:latest hushjoezzy/reverseproxy
   
+  - docker images
+  
   - docker push hushjoezzy/udagram-frontend
   - docker push hushjoezzy/reverseproxy
   - docker push hushjoezzy/udagram-api-user
