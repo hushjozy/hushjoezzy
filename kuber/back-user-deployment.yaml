@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: user-service
+        image: hushjoezzy/udagram-api-user
         imagePullPolicy: Always          
         resources:
           requests:

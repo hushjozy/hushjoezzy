@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: feed-service
-        image: feed-service
+        image: hushjoezzy/udagram-api-feed
         imagePullPolicy: Always          
         resources:
           requests:
