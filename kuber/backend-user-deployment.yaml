@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: user-service
+  name: backend-user
   labels:
-    service: user-service
+    service: backend-user
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: user-service
+      service: backend-user
   template:
     metadata:
       labels:
-        service: user-service
+        service: backend-user
     spec:
       containers:
-      - name: user-service
+      - name: backend-user
         image: hushjoezzy/udagram-api-user
         imagePullPolicy: Always          
         resources:
@@ -24,7 +24,13 @@ spec:
             cpu: "250m"
           limits:
             memory: "1024Mi"
-            cpu: "500m"       
+            cpu: "500m" 
+        env:
+        - name: URL
+          valueFrom:
+            configMapKeyRef:
+              name: env-config
+              key: URL       
         ports:
         - containerPort: 8080
         livenessProbe:

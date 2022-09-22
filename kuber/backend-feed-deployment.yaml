@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: feed-service
+  name: backend-feed
   labels:
-    service: feed-service
+    service: backend-feed
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: feed-service
+      service: backend-feed
   template:
     metadata:
       labels:
-        service: feed-service
+        service: backend-feed
     spec:
       containers:
-      - name: feed-service
+      - name: backend-feed
         image: hushjoezzy/udagram-api-feed
         imagePullPolicy: Always          
         resources:
@@ -23,16 +23,8 @@ spec:
             memory: "64Mi"
             cpu: "250m"
           limits:
-            memory: "1024Mi"
+            memory: "1324Mi"
             cpu: "500m"       
-        ports:
-        - containerPort: 8080
-        livenessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-            initialDelaySeconds: 15  
-            periodSeconds: 20  # kubelet will continue to run this every 20 seconds.
         env:
         - name: AWS_MEDIA_BUCKET
           valueFrom:
