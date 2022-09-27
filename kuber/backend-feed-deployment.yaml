@@ -25,6 +25,14 @@ spec:
           limits:
             memory: "1324Mi"
             cpu: "500m"       
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 15  
+            periodSeconds: 20  # kubelet will continue to run this every 20 seconds.
         env:
         - name: AWS_MEDIA_BUCKET
           valueFrom:
