@@ -21,7 +21,7 @@ jobs:
     - run: docker-compose -f docker-compose-build.yaml build --parallel
     - run: docker tag udagram-api-user:latest hushjoezzy/udagram-api-user
     - run: docker tag udagram-api-feed:latest hushjoezzy/udagram-api-feed
-    - run: docker tag udagram-frontend:latest hushjoezzy/udagram-frontend
+    - run: docker tag udagram-frontend:v2 hushjoezzy/udagram-frontend
     - run: docker tag reverseproxy:latest hushjoezzy/reverseproxy
   
     - run: docker images
