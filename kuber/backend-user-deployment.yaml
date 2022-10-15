@@ -29,7 +29,7 @@ spec:
         - name: URL
           valueFrom:
             configMapKeyRef:
-              name: env-config
+              name: env-configmap
               key: URL       
         ports:
         - containerPort: 8080
@@ -43,41 +43,41 @@ spec:
         - name: AWS_MEDIA_BUCKET
           valueFrom:
             configMapKeyRef:
-              name: env-config
+              name: env-configmap
               key: AWS_MEDIA_BUCKET
         - name: AWS_PROFILE
           valueFrom:
             configMapKeyRef:
-              name: env-config
+              name: env-configmap
               key: AWS_PROFILE
         - name: AWS_REGION
           valueFrom:
             configMapKeyRef:
-              name: env-config
+              name: env-configmap
               key: AWS_REGION
         - name: JWT_SECRET
           valueFrom:
             configMapKeyRef:
-              name: env-config
+              name: env-configmap
               key: JWT_SECRET
         - name: POSTGRES_DATABASE
           valueFrom:
             configMapKeyRef:
-              name: env-config
+              name: env-configmap
               key: POSTGRES_DATABASE
         - name: POSTGRES_HOST
           valueFrom:
             configMapKeyRef:
-              name: env-config
+              name: env-configmap
               key: POSTGRES_HOST
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: env-secret
+              name: env-configmap
               key: POSTGRES_PASSWORD
         - name: POSTGRES_USERNAME
           valueFrom:
             secretKeyRef:
-              name: env-secret
+              name: env-configmap
               key: POSTGRES_USERNAME
       restartPolicy: Always
