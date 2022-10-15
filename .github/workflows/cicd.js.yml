@@ -17,6 +17,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     - run: docker-compose -f docker-compose-build.yaml build --parallel
     - run: docker tag udagram-api-user:v1 hushjoezzy/udagram-api-user
     - run: docker tag udagram-api-feed:v1 hushjoezzy/udagram-api-feed
