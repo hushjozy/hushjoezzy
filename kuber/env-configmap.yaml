@@ -1,11 +1,12 @@
 apiVersion: v1
 kind: ConfigMap
 data:
-  AWS_MEDIA_BUCKET: $AWS_MEDIA_BUCKET
-  AWS_PROFILE: $AWS_PROFILE
-  AWS_REGION: $AWS_REGION
-  JWT_SECRET: $JWT_SECRET
-  POSTGRES_DATABASE: $POSTGRES_DATABASE
-  POSTGRES_HOST: $POSTGRES_HOST
+  AWS_MEDIA_BUCKET: mys3save
+  AWS_PROFILE: joeadmin
+  AWS_REGION: us-east-1
+  JWT_SECRET: testing
+  POSTGRES_DATABASE: josephdatabasedev2
+  POSTGRES_HOST: josephdatabasedev2-instance-1.cztayt8jhvkr.us-east-1.rds.amazonaws.com
+  URL: http://localhost:8100
 metadata:
   name: env-configmap
